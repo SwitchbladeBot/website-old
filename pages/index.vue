@@ -1,50 +1,87 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <div
-        v-for="(feature, i) of features"
-        :key="i"
-        class="column">
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title has-text-grey">
-              {{ feature.title }}
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="content has-text-centered">
-              <b-icon
-                :icon="feature.icon"
-                size="is-large"
-                type="is-primary"/>
-            </div>
-          </div>
-          <footer class="card-footer">
-            <div
-              class="card-footer-item"
-              v-html="feature.content"/>
-          </footer>
-        </div>
+  <section class="section introduction">
+    <div class="container has-text-centered">
+      <img
+        draggable="false"
+        src="@/assets/logo.svg"
+        class="logo"
+        width="128"
+        height="128">
+      <h1 class="title has-text-white">The last bot you'll ever need.</h1>
+      <div class="buttons is-centered">
+        <a
+          class="button is-large is-rounded is-white"
+          href="http://support.switchblade.xyz/"
+          target="_blank">
+          <b-icon icon="lifebuoy" />
+          <span>Join our support server</span>
+        </a>
+        <a
+          class="button is-large is-rounded is-primary"
+          href="http://invite.switchblade.xyz/"
+          target="_blank">
+          <b-icon icon="email" />
+          <span>Invite to your server</span>
+        </a>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import BLogo from '@/components/Logo'
 
 export default {
   name: 'HomePage',
-  components: {BLogo},
   data() {
       return {
-          features: [
-              { icon: 'github-circle', title: 'Free', content: `<span>Open source on <a href="https://github.com/buefy/buefy"> GitHub</a></span>` },
-              { icon: 'cellphone-link', title: 'Responsive', content: `<span><b class="has-text-grey">Every</b> component is responsive</span>` },
-              { icon: 'alert-decagram', title: 'Modern', content: `<span>Built with <a href="https://vuejs.org/">Vue.js</a> and <a href="http://bulma.io/">Bulma</a></span>` },
-              { icon: 'arrange-bring-to-front', title: 'Lightweight', content: `<span>No other internal dependency</span>` }
-          ]
+
       }
   }
 }
 </script>
+
+<style scoped>
+  .is-centered {
+    text-align: center;
+  }
+  .logo {
+    animation: pulse 5s ease-in-out infinite;
+    padding-bottom: 10px;
+  }
+  .button {
+    transition: 0.25s all ease-in-out;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.05);
+    }
+    100% {
+      -webkit-transform: scale(1);
+    }
+  }
+  @-moz-keyframes pulse {
+    0% {
+      -moz-transform: scale(1);
+    }
+    50% {
+      -moz-transform: scale(1.05);
+    }
+    100% {
+      -moz-transform: scale(1);
+    }
+  }
+</style>
