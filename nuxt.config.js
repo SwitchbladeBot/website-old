@@ -34,8 +34,15 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/i18n.js'
   ],
 
+  /*
+   ** Router and Middlewares
+   */
+   router: {
+     middleware: ['i18n']
+   },
   /*
   ** Nuxt.js modules
   */
@@ -44,6 +51,7 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy'
+
   ],
   /*
   ** Axios module configuration

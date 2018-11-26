@@ -49,6 +49,27 @@
                 </a>
               </div>
               <div class="navbar-end">
+                <div
+                  ref="navDropdown"
+                  class="navbar-item has-dropdown"
+                >
+                  <div
+                    class="navbar-link is-flex"
+                    @click="dropdown"
+                  >
+                    <span>{{ $t('lang') }}</span>
+                    <div
+                      class="navbar-dropdown is-boxed"
+                    >
+                      <a
+                        class="navbar-item"
+                        @click="changeLang('en')">English</a>
+                      <a
+                        class="navbar-item"
+                        @click="changeLang('pt')">Portugues</a>
+                    </div>
+                  </div>
+                </div>
                 <a class="navbar-item">
                   <b-icon
                     icon="login-variant"
@@ -65,12 +86,12 @@
         <footer class="footer has-text-white">
           <div class="content has-text-centered">
             <p>
-              Made with <b-icon
+              {{ $t('footer.made_with') }}<b-icon
                 class="heart"
                 icon="heart"
-                custom-size="mdi-18px" /> by <router-link
+                custom-size="mdi-18px" /> <router-link
                   class="colorFade"
-                  to="/contributors">a lot of people</router-link>.
+                  to="/contributors">{{ $t('footer.by_lot_of') }}</router-link>.
             </p>
           </div>
         </footer>
@@ -94,6 +115,16 @@ export default {
       const $target = this.$refs.navMenu
       $burger.classList.toggle('is-active')
       $target.classList.toggle('is-active')
+    },
+    dropdown () {
+      const $target = this.$refs.navDropdown
+      $target.classList.toggle('is-active')
+    },
+    changeLang (lang) {
+      //mutate 'locale' in store
+      this.$store.commit('SET_LANG', lang)
+      //re-route to the current page but with the selected language in a query string
+      this.$router.push({ path: `${this.$router.currentRoute.path}?lang=${lang}` })
     }
   }
 }
