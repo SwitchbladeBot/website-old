@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const express = require('express')
 const { Nuxt, Builder } = require('nuxt')
-const {Database, Model} = require('mongorito');
+const {Database, Model} = require('mongorito')
 const cors = require('cors')
 const { Client } = require('discord.js')
 
