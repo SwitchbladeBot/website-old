@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const express = require('express')
 const { Nuxt, Builder } = require('nuxt')
-const {Database, Model} = require('mongorito')
+const { Database, Model } = require('mongorito')
 const cors = require('cors')
 const { Client } = require('discord.js')
 
@@ -24,8 +24,7 @@ const client = new Client({
   disableEveryone: true
 })
 
-async function start() {
-
+async function start () {
   // API
   app.use('/api', cors()) // TODO: Configure CORS to only accept requests from the same domain
   app.use('/api', express.json())
