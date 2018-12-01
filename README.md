@@ -34,7 +34,7 @@ npm run start
 
 **4. Clone your fork of the website ([which you can find here](https://github.com/SwitchbladeBot/website))**
 ```bash
-git clone https://github.com/<your github username>/bladey-api
+git clone https://github.com/<your github username>/website
 ```
 
 **5. Install Dependencies**
