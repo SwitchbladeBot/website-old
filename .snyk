@@ -1,0 +1,11 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - mongorito > mquery > debug:
+        patched: '2018-12-03T00:27:09.030Z'
+  'npm:ms:20170412':
+    - mongorito > mquery > debug > ms:
+        patched: '2018-12-03T00:27:09.030Z'
