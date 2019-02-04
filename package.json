@@ -19,10 +19,8 @@
     "bulma": "^0.7.2",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
-    "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
     "express": "^4.16.3",
-    "mongorito": "^3.0.4",
     "nuxt": "^2.3.4",
     "nuxt-buefy": "^0.3.3"
   },
