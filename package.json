@@ -12,7 +12,9 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "test": "standard",
-    "fix": "standard --fix"
+    "fix": "standard --fix",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
@@ -22,7 +24,8 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "nuxt": "^2.3.4",
-    "nuxt-buefy": "^0.3.3"
+    "nuxt-buefy": "^0.3.3",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -33,5 +36,6 @@
     "nodemon": "^1.18.7",
     "sass-loader": "^7.1.0",
     "standard": "^12.0.1"
-  }
+  },
+  "snyk": true
 }
